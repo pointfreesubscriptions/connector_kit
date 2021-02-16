@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
 
-  spec.add_dependency "httparty", "~> 0.16.3"
+  spec.add_dependency "httparty"
   spec.add_dependency "jwt", "~> 2.1", ">= 2.1.0"
 end

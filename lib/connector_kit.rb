@@ -41,7 +41,7 @@ module ConnectorKit
       @httpclient.get "/apps/#{id}", AppResponseMapper.new
     end
 
-    def prepare_submition_versions(id)
+    def prepare_submission_versions(id)
       releaseVersion(id, "PREPARE_FOR_SUBMISSION")
     end
 

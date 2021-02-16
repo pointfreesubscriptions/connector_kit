@@ -1,15 +1,15 @@
 PATH
   remote: .
   specs:
-    connector_kit_fork (0.3.1)
-      httparty (~> 0.16.3)
+    connector_kit_fork (0.3.2)
+      httparty
       jwt (~> 2.1, >= 2.1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.4.4)
-    httparty (0.16.4)
+    httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     jwt (2.2.2)
