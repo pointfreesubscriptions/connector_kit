@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    connector_kit_fork (0.3.2)
+    appstore_kit_fork (0.0.1)
       httparty
-      jwt (~> 2.1, >= 2.1.0)
+      jwt
 
 GEM
   remote: https://rubygems.org/
@@ -36,8 +36,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  appstore_kit_fork!
   bundler
-  connector_kit_fork!
   rake
   rspec
 

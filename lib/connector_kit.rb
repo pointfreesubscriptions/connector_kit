@@ -42,11 +42,11 @@ module ConnectorKit
     end
 
     def prepare_submission_versions(id)
-      releaseVersion(id, "PREPARE_FOR_SUBMISSION")
+      release_version(id, "PREPARE_FOR_SUBMISSION")
     end
 
     def ready_sale_versions(id)
-      releaseVersion(id, "READY_FOR_SALE")
+      release_version(id, "READY_FOR_SALE")
     end
 
     def release_version(id, state)
