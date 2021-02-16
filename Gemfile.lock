@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    connector_kit (0.3.1)
+    connector_kit_fork (0.3.1)
       httparty (~> 0.16.3)
       jwt (~> 2.1, >= 2.1.0)
 
@@ -37,7 +37,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  connector_kit!
+  connector_kit_fork!
   rake
   rspec
 

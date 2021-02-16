@@ -2,7 +2,7 @@ $LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require "connector_kit/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "connector_kit"
+  spec.name          = "connector_kit_fork"
   spec.version       = ConnectorKit::VERSION
   spec.authors       = ["Simon Jarbrant"]
   spec.email         = ["simonjarbrant@gmail.com"]
