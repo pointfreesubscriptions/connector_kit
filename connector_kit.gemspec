@@ -2,14 +2,14 @@ $LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require "connector_kit/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "connector_kit_fork"
+  spec.name          = "appstore_kit_fork"
   spec.version       = ConnectorKit::VERSION
-  spec.authors       = ["Simon Jarbrant"]
-  spec.email         = ["simonjarbrant@gmail.com"]
+  spec.authors       = ["Vadim Lavrov"]
+  spec.email         = ["vadimlavrov@hotmail.com"]
 
-  spec.summary       = "A gem for communicating with the App Store Connect API."
-  spec.description   = "A gem for communicating with the App Store Connect API."
-  spec.homepage      = "https://github.com/simba909/connector_kit"
+  spec.summary       = "A gem for communicating with the App Store Connect API. Forked from https://github.com/simba909/connector_kit fro tests"
+  spec.description   = "A gem for communicating with the App Store Connect API. Forked from https://github.com/simba909/connector_kit fro tests"
+  spec.homepage      = "https://github.com/Vadim-Lavrov/appStore_api_fork"
   spec.license       = "MIT"
 
   all_files  = `git ls-files`.split("\n")
@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
 
   spec.add_dependency "httparty"
-  spec.add_dependency "jwt", "~> 2.1", ">= 2.1.0"
+  spec.add_dependency "jwt"
 end

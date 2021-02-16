@@ -1,4 +1,4 @@
-require 'connector_kit/models/version'
+require 'connector_kit/models/app_version'
 
 module ConnectorKit
 
