@@ -2,18 +2,21 @@ require 'connector_kit/httpclient.rb'
 require 'connector_kit/token_generator'
 require 'connector_kit/version'
 require 'connector_kit/mappers/app_list_response_mapper'
+require 'connector_kit/mappers/app_response_mapper'
 require 'connector_kit/mappers/user_list_response_mapper'
 require 'connector_kit/mappers/build_list_response_mapper'
 require 'connector_kit/mappers/build_details_response_mapper'
+require 'connector_kit/mappers/app_version_mapper'
 
 module ConnectorKit
   # Class used for communicating with the App Store Connect API
   class Client
-    def initialize(issuer_id, key_id, private_key_file_path)
+
+    def initialize(issuer_id, key_id, private_key)
       token_generator = TokenGenerator.new(
         issuer_id,
         key_id,
-        private_key_file_path
+        private_key
       )
 
       @httpclient = HTTPClient.new('https://api.appstoreconnect.apple.com/v1')
@@ -32,6 +35,22 @@ module ConnectorKit
 
     def app_builds(app)
       @httpclient.get "/apps/#{app.id}/builds", BuildListResponseMapper.new
+    end
+
+    def app(id)
+      @httpclient.get "/apps/#{id}", AppResponseMapper.new
+    end
+
+    def prepare_submition_versions(id)
+      releaseVersion(id, "PREPARE_FOR_SUBMISSION")
+    end
+
+    def ready_sale_versions(id)
+      releaseVersion(id, "READY_FOR_SALE")
+    end
+
+    def release_version(id, state)
+      @httpclient.get "/apps/#{id}/appStoreVersions?filter[appStoreState]=#{state}", VersionResponseMapper.new
     end
 
     def build_beta_details(build)

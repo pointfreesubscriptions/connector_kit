@@ -4,8 +4,14 @@ require 'jwt'
 module ConnectorKit
   # Helper class for generating JWT tokens
   class TokenGenerator
-    def initialize(issuer_id, key_id, private_key_file_path)
-      @private_key_file_path = private_key_file_path
+
+    def self.cretat_from_file(issuer_id, key_id, private_key_file_path)
+      private_key = File.read(@private_key_file_path)
+      instance = TokenGenerator.new(issuer_id, key_id, private_key)
+    end
+
+    def initialize(issuer_id, key_id, private_key)
+      @private_key = private_key
       @custom_headers = {
         kid: key_id,
         typ: 'JWT'
@@ -17,9 +23,7 @@ module ConnectorKit
     end
 
     def generate_token
-      private_key = File.read(@private_key_file_path)
-      ecdsa_key = OpenSSL::PKey.read(private_key)
-
+      ecdsa_key = OpenSSL::PKey.read(@private_key)
       expiration = Time.now.to_i + 20 * 60
       @payload[:exp] = expiration
 
