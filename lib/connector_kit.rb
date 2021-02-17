@@ -25,8 +25,8 @@ module ConnectorKit
       )
     end
 
-    def apps
-      @httpclient.get '/apps', AppListResponseMapper.new
+    def apps(bundle_id)
+      @httpclient.get "/apps?filter[bundleId]=#{bundle_id}", AppListResponseMapper.new
     end
 
     def users
