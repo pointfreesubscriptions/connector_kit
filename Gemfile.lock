@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    appstore_kit_fork (0.0.3)
+    appstore_kit_fork (0.0.4)
       httparty
       jwt
 
