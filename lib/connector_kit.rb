@@ -41,16 +41,16 @@ module ConnectorKit
       @httpclient.get "/apps/#{id}", AppResponseMapper.new
     end
 
-    def prepare_submission_versions(id)
-      release_version(id, "PREPARE_FOR_SUBMISSION")
+    def prepare_submission_versions(id, platform)
+      release_version(id, "PREPARE_FOR_SUBMISSION", platform)
     end
 
-    def ready_sale_versions(id)
-      release_version(id, "READY_FOR_SALE")
+    def ready_sale_versions(id, platform)
+      release_version(id, "READY_FOR_SALE", platform)
     end
 
-    def release_version(id, state)
-      @httpclient.get "/apps/#{id}/appStoreVersions?filter[appStoreState]=#{state}", VersionResponseMapper.new
+    def release_version(id, state, platform)
+      @httpclient.get "/apps/#{id}/appStoreVersions?filter[appStoreState]=#{state}&filter[platform]=#{platform}", VersionResponseMapper.new
     end
 
     def build_beta_details(build)
